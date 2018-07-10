@@ -1,5 +1,5 @@
-Name:			'Deal Name'
-Sponsor:		'Company'
+Name:			'Deal Name', uid-ctrl-37
+Sponsor:		'Company', 
 Project Notes:		
 Project Type:		'Deal Type'
 EL Executed Date:	'Deal moved to Closed Won'
