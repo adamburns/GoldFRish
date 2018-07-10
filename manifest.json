@@ -1,15 +1,13 @@
 {
-  "manifest_version": 2,
-  "name": "My Cool Extension",
+  "name": "GoldFRish",
   "version": "0.1",
-  "content_scripts": [
-  {
-  "js": [ "sharepoint.js" ],
-  "matches": [ "*://*factrightllc367.sharepoint.com/_layouts/15/NewDocSet.aspx/*" ]
+  "manifest_version" : 2,
+  "description": "Eases data transfer from HubSpot to SharePoint",
+  "background" : {
+    "scripts" : ["background.js"]
   },
-  {
-  "js": [ "hubspot.js" ],
-  "matches": [ "*://*.twitch.tv/" ]
-  }
-]
+  "browser_action": {
+    "default_icon": "logo.png"
+  },
+  "permissions": ["activeTab"]
 }
