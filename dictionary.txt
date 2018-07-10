@@ -1,0 +1,19 @@
+Name:			'Deal Name'
+Sponsor:		'Company'
+Project Notes:		
+Project Type:		'Deal Type'
+EL Executed Date:	'Deal moved to Closed Won'
+Unique EL#:		
+Opportunity #:		
+Link to Deal: 		URL
+Date Retainer Received:	//Entered in by Leah
+Priority:		//not in HubSpot
+Restricted Distribution://not in HubSpot
+Hourly Billing:		
+Project Status:		'Preliminary'
+Project Lead:		'Project Lead'
+FactRight Team Members:	//assigned by Project lead
+Section Assignments	//remove
+Quality Control:	//no longer used
+Finalize Report:	//not in HubSpot
+
