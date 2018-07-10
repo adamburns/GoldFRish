@@ -12,3 +12,5 @@ localStorage.setItem('FR Executed', JSON.stringify(Executed));
 
 var URL = window.location.href;
 localStorage.setItem('FR URL', JSON.stringify(URL));
+
+alert("The HubSpot script has run, click me again on a SharePoint page to copy the data");
