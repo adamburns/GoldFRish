@@ -1,1 +1,2 @@
-alert("You are on HubSpot!");
+var value = document.getElementById("uid-ctrl-28").value;
+console.log(value);
