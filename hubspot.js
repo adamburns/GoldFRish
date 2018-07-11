@@ -14,7 +14,7 @@ function setValues(callback){
         console.log('Stored FR_ProjectType as: ' + ProjectType);
     });
 
-    var Executed = document.getElementById("uid-ctrl-17").value;
+    var Executed = document.getElementById("uid-ctrl-22").value;
     chrome.storage.local.set({'FR_Executed': Executed}, function() {
         console.log('Stored FR_Executed as: ' + Executed);
     });
