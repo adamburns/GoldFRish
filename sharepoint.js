@@ -40,7 +40,10 @@ function setSharePointValues(callback) {
     document.getElementById("LinkToOpportunity_edb7d412-4d8b-4b72-9f81-d22922fb3ba9_$UrlFieldUrl").value = URL;
 
     document.getElementById("LinkToOpportunity_edb7d412-4d8b-4b72-9f81-d22922fb3ba9_$UrlFieldDescription").value = URL;
+    
+    document.getElementById("ReportType_ad17dae0-b5b6-4308-a494-ce06b25a8275_$DropDownChoice").value = ProjectType;
 
+    document.getElementById("ReportStatus1_43c10367-8f65-4d65-867c-6c060116293b_$DropDownChoice").value = "Preliminary";
 
     callback();
 }
