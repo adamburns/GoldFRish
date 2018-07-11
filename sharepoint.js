@@ -23,7 +23,11 @@ function getValues(callback) {
     chrome.storage.local.get(['URL'], function(result) {
         console.log('Fetched URL as: ' + result.URL);
         URL = result.URL;
-        console.log('Testing URL: ' + URL);
+    });
+    
+    chrome.storage.local.get(['ProjectLead'], function(result) {
+        console.log('Fetched ProjectLead as: ' + result.ProjectLead);
+        ProjectLead = result.ProjectLead;
     });
 
     callback(complete);
@@ -44,6 +48,8 @@ function setSharePointValues(callback) {
     document.getElementById("ReportType_ad17dae0-b5b6-4308-a494-ce06b25a8275_$DropDownChoice").value = ProjectType;
 
     document.getElementById("ReportStatus1_43c10367-8f65-4d65-867c-6c060116293b_$DropDownChoice").value = "Preliminary";
+
+    document.getElementById("ProjectLead_4c03e8ff-0d1d-4f45-a90b-ddce9abe5cca_$ClientPeoplePicker").innerHTML = ProjectLead;
 
     callback();
 }

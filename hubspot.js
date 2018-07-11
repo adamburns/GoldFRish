@@ -24,6 +24,11 @@ function setValues(callback){
         console.log('Stored URL as: ' + URL); 
     });
 
+    var ProjectLead = document.querySelector('div.private-form__set.private-form__set--floating.floating-field-with-border[data-profile-property="project_lead"] span.private-dropdown__button-label.uiDropdown__buttonLabel').innerHTML.replace(/<\!--.*?-->/g, "");
+    chrome.storage.local.set({'ProjectLead': ProjectLead}, function() {
+        console.log('Stored ProjectLead as: ' + ProjectLead);
+    });
+
 	callback();
 }
 
