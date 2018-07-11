@@ -3,12 +3,42 @@ StorageArea.get(['Name'], function(result) {
    document.getElementById("FileLeafRef_8553196d-ec8d-4564-9861-3dbe931050c8_$onetidIOFile").value = result.key;
 });
 
-//var list = document.getElementById("ReportType_ad17dae0-b5b6-4308-a494-ce06b25a8275_$DropDownChoice");
-//var opts = list.options.length;
-//for (var i = 0; i < opts; i++) {
-//   if (list.opts[i].value == localStorage.getItem("FR ProjectType")) {
-//      list.opts[i].selected = true;
-//      break;
-//   }
-//}
+function getValues(callback) {
+    
+    chrome.storage.local.get(['FR_Name'], function(result) {
+        console.log('Fetched FR_Name as: ' + result.FR_Name);
+        var Name = result.FR_Name;
+    });
+    
+    chrome.storage.local.get(['FR_Sponsor'], function(result) {
+        console.log('Fetched FR_Sponsor as: ' + result.FR_Sponsor);
+        var Sponsor = result.FR_Sponsor;
+    });
 
+    chrome.storage.local.get(['FR_ProjectType'], function(result) {
+        console.log('Fetched FR_ProjectType as: ' + result.FR_ProjectType);
+        var ProjectType = result.FR_ProjectType;
+    });
+
+    chrome.storage.local.get(['FR_Executed'], function(result) {
+        console.log('Fetched FR_Executed as: ' + result.FR_Executed);
+        var Executed = result.FR_Executed;
+    });
+
+    chrome.storage.local.get(['URL'], function(result) {
+        console.log('Fetched URL as: ' + result.URL);
+        var URL = result.URL;
+    });
+
+    callback(setSharePointValues);
+}
+
+function setSharePointValues(callback) {
+    
+
+    callback(complete);
+}
+
+function complete() {
+
+} 

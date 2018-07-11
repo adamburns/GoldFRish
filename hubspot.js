@@ -24,18 +24,12 @@ function setValues(callback){
         console.log('Stored URL as: ' + URL); 
     });
 
-	callback(complete);
-}
-function getValues(callback){
-	chrome.storage.local.get(['FR_Name'], function(result) {
-		console.log('Fetched FR_Name as: ' + result.FR_Name);
-	});
 	callback();
 }
 
 function complete(){
-	alert('The script is complete!');
+	alert('The HubSpot script has finished running.');
 }
 
-setValues(getValues);
+setValues(complete);
 
