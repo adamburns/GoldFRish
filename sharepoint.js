@@ -38,27 +38,86 @@ function getValues(callback) {
 
 function setSharePointValues(callback) {
 
-    console.log('Function 2');
+    try
+    {
+        document.getElementById("FileLeafRef_8553196d-ec8d-4564-9861-3dbe931050c8_$onetidIOFile").value = Name;
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
 
-    document.getElementById("FileLeafRef_8553196d-ec8d-4564-9861-3dbe931050c8_$onetidIOFile").value = Name;
+    try
+    {
+        document.getElementById("Sponsor_$containereditableRegion").innerHTML = Sponsor;
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
+
+    try
+    {
+        document.getElementById("EL_x0020_Executed_x0020_Date_de12219e-f637-4cdd-a2ca-db8a187fc818_$DateTimeFieldDate").value = Executed;
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
     
-    console.log('Sponsor: ' + Sponsor);
+    try
+    {
+        document.getElementById("LinkToOpportunity_edb7d412-4d8b-4b72-9f81-d22922fb3ba9_$UrlFieldUrl").value = URL;
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
 
-    document.getElementById("Sponsor_$containereditableRegion").innerHTML = Sponsor;
+    try
+    {    
+        document.getElementById("LinkToOpportunity_edb7d412-4d8b-4b72-9f81-d22922fb3ba9_$UrlFieldDescription").value = URL.match(/\d+/g).map(Number)[1];
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
+
+    try
+    {
+        document.getElementById("ReportType_ad17dae0-b5b6-4308-a494-ce06b25a8275_$DropDownChoice").value = ProjectType;
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
     
-    document.getElementById("EL_x0020_Executed_x0020_Date_de12219e-f637-4cdd-a2ca-db8a187fc818_$DateTimeFieldDate").value = Executed;
+    try
+    {
+        document.getElementById("ReportStatus1_43c10367-8f65-4d65-867c-6c060116293b_$DropDownChoice").value = "Preliminary";
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
 
-    document.getElementById("LinkToOpportunity_edb7d412-4d8b-4b72-9f81-d22922fb3ba9_$UrlFieldUrl").value = URL;
+    try
+    {
+        document.getElementById("ProjectLead_4c03e8ff-0d1d-4f45-a90b-ddce9abe5cca_$ClientPeoplePicker_InitialHelpText")
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
 
-    document.getElementById("LinkToOpportunity_edb7d412-4d8b-4b72-9f81-d22922fb3ba9_$UrlFieldDescription").value = URL.match(/\d+/g).map(Number)[1];
-    
-    document.getElementById("ReportType_ad17dae0-b5b6-4308-a494-ce06b25a8275_$DropDownChoice").value = ProjectType;
-
-    document.getElementById("ReportStatus1_43c10367-8f65-4d65-867c-6c060116293b_$DropDownChoice").value = "Preliminary";
-
-    document.getElementById("ProjectLead_4c03e8ff-0d1d-4f45-a90b-ddce9abe5cca_$ClientPeoplePicker_InitialHelpText")
-
-    document.getElementById("ProjectLead_4c03e8ff-0d1d-4f45-a90b-ddce9abe5cca_$ClientPeoplePicker_InitialHelpText").innerHTML = ProjectLead;
+    try
+    {    
+        document.getElementById("ProjectLead_4c03e8ff-0d1d-4f45-a90b-ddce9abe5cca_$ClientPeoplePicker_InitialHelpText").innerHTML = ProjectLead;
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
 
     callback();
 }
