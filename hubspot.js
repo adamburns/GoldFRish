@@ -4,7 +4,7 @@ function setValues(callback){
 		console.log('Stored FR_Name as: ' + Name);
 	});
 	
-    var Sponsor = document.querySelector('div.is--module.private-card.private-card__wrapper.private-card--compact.namespaced-hack-section.Section__ScrollWrapper-jajphQ.eSErqF[data-sidebar-key="Company"] div.m-bottom-1.is--heading-7').innerHTML;
+    var Sponsor = document.querySelector('div.is--module.private-card.private-card__wrapper.private-card--compact.namespaced-hack-section.UISection__ScrollWrapper-eQImbY.jpCPEv[data-sidebar-key="Company"] div.m-bottom-1.is--heading-7').innerText;
     chrome.storage.local.set({'FR_Sponsor': Sponsor}, function() {
         console.log('Stored FR_Sponsor as: ' + Sponsor);
     });
