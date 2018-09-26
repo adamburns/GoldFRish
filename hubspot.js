@@ -70,6 +70,7 @@ function clearValues(callback){
     {
         console.log(e);
     }
+    callback();
 }
 
 function setValues(callback){
@@ -152,5 +153,5 @@ function complete(){
 	alert('The HubSpot script has finished running.');
 }
 
-clearValues(setValues(complete));
+clearValues(setValues(complete()));
 
