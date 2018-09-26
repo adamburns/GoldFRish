@@ -1,3 +1,77 @@
+function clearValues(callback){
+    try
+    {
+        var Name = null;
+        chrome.storage.local.set({'FR_Name': Name}, function(){
+            console.log('Cleared FR_Name');
+        });
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
+
+    try
+    {
+        var Sponsor = null;
+        chrome.storage.local.set({'FR_Sponsor': Sponsor}, function() {
+            console.log('Cleared FR_Sponsor');
+        });
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
+
+    try
+    {
+        var ProjectType = null;
+        chrome.storage.local.set({'FR_ProjectType': ProjectType}, function() {
+            console.log('Cleared FR_ProjectType');
+        });
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
+    
+    try
+    {
+        var Executed = null;
+        chrome.storage.local.set({'FR_Executed': Executed}, function() {
+            console.log('Cleared FR_Executed');
+        });
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
+    
+    try
+    {
+        var URL = null;
+        chrome.storage.local.set({'URL': URL}, function() {
+            console.log('Cleared URL');
+        });
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
+
+    try
+    {
+        var ProjectLead = null;
+        chrome.storage.local.set({'ProjectLead': ProjectLead}, function() {
+            console.log('Cleared ProjectLead');
+        });
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
+}
+
 function setValues(callback){
 	try
     {
@@ -78,5 +152,5 @@ function complete(){
 	alert('The HubSpot script has finished running.');
 }
 
-setValues(complete);
+clearValues(setValues(complete));
 
