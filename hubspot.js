@@ -70,7 +70,10 @@ function clearValues(callback){
     {
         console.log(e);
     }
-    callback();
+    if(callback) 
+    {
+        callback();
+    }
 }
 
 function setValues(callback){
@@ -83,6 +86,7 @@ function setValues(callback){
 	}
     catch(e)
     {
+        alert("There was an error scraping the Name from Hubspot, please let the developer know.");
         console.log(e);
     }
 
@@ -95,6 +99,7 @@ function setValues(callback){
     }
     catch(e)
     {
+        alert("There was an error scraping the Sponsor from Hubspot, please let the developer know.");
         console.log(e);
     }
 
@@ -107,6 +112,7 @@ function setValues(callback){
     }
     catch(e)
     {
+        alert("There was an error scraping the Project Type from Hubspot, please let the developer know.");
         console.log(e);
     }
 
@@ -119,6 +125,7 @@ function setValues(callback){
     }
     catch(e)
     {
+        alert("There was an error scraping the Executed Date from Hubspot, please let the developer know.");
         console.log(e);
     }
 
@@ -131,6 +138,7 @@ function setValues(callback){
     }
     catch(e)
     {
+        alert("There was an error scraping the URL from Hubspot, please let the developer know.");
         console.log(e);
     }
 
@@ -143,15 +151,24 @@ function setValues(callback){
     }
     catch(e)
     {
+        alert("There was an error scraping the Project Lead from Hubspot, please let the developer know.");
         console.log(e);
     }
 
-	callback();
+	if(callback)
+    {
+         callback();
+    }
 }
 
 function complete(){
 	alert('The HubSpot script has finished running.');
 }
 
-clearValues(setValues(complete()));
 
+clearValues(function() {
+    setValues(function() {
+        complete(function() {
+        });
+    });
+});
