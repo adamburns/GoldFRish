@@ -32,18 +32,21 @@ function getValues(callback) {
             ProjectLead = "Chari Graham";
         }
     });
-
-    setTimeout(callback, 50);
+    
+    if(callback)
+    {
+        setTimeout(callback(), 50);
+    }
 }
 
 function setSharePointValues(callback) {
-
     try
     {
         document.getElementById("FileLeafRef_8553196d-ec8d-4564-9861-3dbe931050c8_$onetidIOFile").value = Name;
     }
     catch(e)
     {
+        alert("There was an error entering the Name into SharePoint, please let the developer know.");
         console.log(e);
     }
 
@@ -53,6 +56,7 @@ function setSharePointValues(callback) {
     }
     catch(e)
     {
+        alert("There was an error entering the Sponsor into SharePoint, please let the developer know.");
         console.log(e);
     }
 
@@ -62,6 +66,7 @@ function setSharePointValues(callback) {
     }
     catch(e)
     {
+        alert("There was an error entering the Executed Date into SharePoint, please let the developer know.");
         console.log(e);
     }
     
@@ -71,6 +76,7 @@ function setSharePointValues(callback) {
     }
     catch(e)
     {
+        alert("There was an error entering the URL into SharePoint, please let the developer know.");
         console.log(e);
     }
 
@@ -80,6 +86,7 @@ function setSharePointValues(callback) {
     }
     catch(e)
     {
+        alert("There was an error entering the HubSpot ID into SharePoint, please let the developer know.");
         console.log(e);
     }
 
@@ -89,6 +96,7 @@ function setSharePointValues(callback) {
     }
     catch(e)
     {
+        alert("There was an error entering the Project Type into SharePoint, please let the developer know.");
         console.log(e);
     }
     
@@ -98,15 +106,7 @@ function setSharePointValues(callback) {
     }
     catch(e)
     {
-        console.log(e);
-    }
-
-    try
-    {
-        document.getElementById("ProjectLead_4c03e8ff-0d1d-4f45-a90b-ddce9abe5cca_$ClientPeoplePicker_InitialHelpText")
-    }
-    catch(e)
-    {
+        alert("There was an error entering the Project Status into SharePoint, please let the developer know.");
         console.log(e);
     }
 
@@ -116,18 +116,23 @@ function setSharePointValues(callback) {
     }
     catch(e)
     {
+        alert("There was an error entering the Project Lead into SharePoint, please let the developer know.");
         console.log(e);
     }
 
-    callback();
+    if(callback)
+    {    
+        callback();
+    }
 }
 
 function complete() {
-    
-    console.log('Function 3');
-    
     alert('The SharePoint script has finished running.');
 }
 
-getValues(function(){ setSharePointValues(complete) });
-console.log('Global variable URL: ' + URL);
+getValues(function() { 
+    setSharePointValues(function() {
+        complete(function() {
+        });
+    });
+});
