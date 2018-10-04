@@ -1,3 +1,5 @@
+//function which sets all of use to null in chrome's local storage
+//if an error is encountered, it is logged and the next value is cleared
 function clearValues(callback){
     try
     {
@@ -75,7 +77,8 @@ function clearValues(callback){
         callback();
     }
 }
-
+//scrapes for values embedded in the HubSpot's HTML, and then stores it into chrome's local storage
+//if an error is encountered, an error message is prompted and logged to console and the next variable is scraped
 function setValues(callback){
 	try
     {
@@ -160,7 +163,7 @@ function setValues(callback){
          callback();
     }
 }
-
+//function to alert the user that the script has completed
 function complete(){
 	alert('The HubSpot script has finished running.');
 }
