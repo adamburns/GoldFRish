@@ -1,3 +1,4 @@
+//fetch values stored in chrome's local storage, and then stores them to global variables
 function getValues(callback) {
     
     chrome.storage.local.get(['FR_Name'], function(result) {
@@ -25,6 +26,7 @@ function getValues(callback) {
         URL = result.URL;
     });
     
+    //if ProjectLead is incomplete, then default to 'Chari Graham'
     chrome.storage.local.get(['ProjectLead'], function(result) {
         console.log('Fetched ProjectLead as: ' + result.ProjectLead);
         ProjectLead = result.ProjectLead;
@@ -38,7 +40,7 @@ function getValues(callback) {
         setTimeout(callback(), 50);
     }
 }
-
+//embeds values into SharePoints HTML, some of which may require extra user input
 function setSharePointValues(callback) {
     try
     {
@@ -126,6 +128,7 @@ function setSharePointValues(callback) {
     }
 }
 
+//an alert message to inform the user that the script is complete
 function complete() {
     alert('The SharePoint script has finished running.');
 }
